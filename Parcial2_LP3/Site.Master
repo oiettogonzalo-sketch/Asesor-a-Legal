@@ -1,0 +1,83 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Parcial2_LP3.SiteMaster" %>
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head runat="server">
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Asesoría Legal Global</title>
+    <link href="Content/estilos.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+
+<body>
+    <form id="form1" runat="server">
+
+        <header class="navbar">
+            <div class="logo-container">
+
+                <asp:Image
+                    ID="imgLogo"
+                    runat="server"
+                    ImageUrl="~/Imagenes/logo 2.png"
+                    CssClass="logo" />
+
+                <div class="logo-text">
+                    <h2>ASESORÍA LEGAL</h2>
+                    <span>GLOBAL</span>
+                </div>
+
+            </div>
+
+            
+            <div class="menu">
+                <a href="Inicio.aspx">Inicio</a>
+                <% if (Session["Autenticado"] != null &&
+                       Session["Autenticado"].ToString() == "True")
+                   { %>
+                    <a href="Documentos.aspx">Mis documentos</a>
+                    <a href="CerrarSesion.aspx">Cerrar sesión</a>
+                <% }
+                   else
+                   { %>
+                    <a href="Registro.aspx">Registrarse</a>
+                    <a href="Login.aspx">Iniciar sesión</a>
+                <% } %>
+            </div>
+
+        </header>
+
+        <main class="contenido">
+
+            <asp:ContentPlaceHolder
+                ID="MainContent"
+                runat="server">
+            </asp:ContentPlaceHolder>
+
+        </main>
+
+        <footer class="footer">
+            <div class="footer-contenido">
+                <h3>Asesoría Legal Global</h3>
+
+                <p>
+                    Comprometidos con brindar asesoramiento
+                    y soluciones legales.
+                </p>
+
+                <p class="copyright">
+                    © 2026 Asesoría Legal Global.
+                    Todos los derechos reservados.
+                </p>
+
+            </div>
+        </footer>
+    </form>
+</body>
+</html>
+

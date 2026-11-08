@@ -1,0 +1,17 @@
+# Visual Studio
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.csproj.user
+
+# NuGet
+packages/
+
+# Temporales
+[Tt]emp/
+[Dd]ebug/
+[Rr]elease/
+*.log
